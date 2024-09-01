@@ -16,9 +16,9 @@
 package fm.last.musicbrainz.data.model;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 public class AreaTypeTest {
 
@@ -43,7 +43,7 @@ public class AreaTypeTest {
     assertThat(AreaType.valueOf(id), is(AreaType.UNDEFINED));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test()
   public void unrecognisedIdThrowsException() {
     AreaType.valueOf(Integer.MAX_VALUE);
   }

@@ -17,13 +17,14 @@ package fm.last.musicbrainz.data.model;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.isEmptyString;
-import static org.junit.Assert.assertThat;
+
 
 import java.util.Set;
 import java.util.UUID;
 
 import org.joda.time.DateTime;
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 import com.google.common.collect.Sets;
 

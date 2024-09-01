@@ -16,11 +16,12 @@
 package fm.last.musicbrainz.data.model;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+
 
 import java.util.List;
 
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 import fm.last.musicbrainz.data.AbstractHibernateModelIT;
 

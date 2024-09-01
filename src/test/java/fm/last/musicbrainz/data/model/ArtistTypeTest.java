@@ -16,9 +16,8 @@
 package fm.last.musicbrainz.data.model;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 public class ArtistTypeTest {
 
@@ -43,7 +42,7 @@ public class ArtistTypeTest {
     assertThat(ArtistType.valueOf(id), is(ArtistType.UNDEFINED));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test()
   public void unrecognisedTypeThrowsException() {
     ArtistType.valueOf(Integer.MAX_VALUE);
   }

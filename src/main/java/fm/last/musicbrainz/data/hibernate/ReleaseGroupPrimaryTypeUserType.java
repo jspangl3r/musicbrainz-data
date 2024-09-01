@@ -16,6 +16,12 @@
 package fm.last.musicbrainz.data.hibernate;
 
 import fm.last.musicbrainz.data.model.ReleaseGroupPrimaryType;
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class ReleaseGroupPrimaryTypeUserType extends AbstractEnumUserType<ReleaseGroupPrimaryType> {
 
@@ -33,4 +39,13 @@ public class ReleaseGroupPrimaryTypeUserType extends AbstractEnumUserType<Releas
     return ReleaseGroupPrimaryType.valueOf(id);
   }
 
+  @Override
+  public Object nullSafeGet(ResultSet resultSet, String[] strings, SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException, SQLException {
+    return null;
+  }
+
+  @Override
+  public void nullSafeSet(PreparedStatement preparedStatement, Object o, int i, SharedSessionContractImplementor sharedSessionContractImplementor) throws HibernateException, SQLException {
+
+  }
 }

@@ -24,10 +24,7 @@ import javax.sql.DataSource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.stat.Statistics;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
@@ -36,9 +33,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/spring/musicbrainz-data-test.xml" })
-@Ignore("This is abstract")
 public abstract class AbstractHibernateModelIT {
 
   private static final String TEST_SQL_PATH = "src/test/sql";
@@ -57,13 +52,13 @@ public abstract class AbstractHibernateModelIT {
 
   private long fetches;
 
-  @Before
+  @BeforeEach
   public void setupDatabases() throws Exception {
     jdbcTemplate.setDataSource(dataSource);
     insertTestData(jdbcTemplate, new File(TEST_SQL_PATH, "musicbrainz-unittest.sql"));
   }
 
-  @Before
+  @BeforeEach
   public void initialise() {
     statistics = sessionFactory.getStatistics();
     session = sessionFactory.openSession();
@@ -72,7 +67,7 @@ public abstract class AbstractHibernateModelIT {
     markFetchCount();
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     if (session != null) {
       session.close();

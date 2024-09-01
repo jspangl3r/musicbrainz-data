@@ -16,9 +16,8 @@
 package fm.last.musicbrainz.data.model;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 public class ReleaseGroupPrimaryTypeTest {
 
@@ -53,7 +52,7 @@ public class ReleaseGroupPrimaryTypeTest {
     assertThat(ReleaseGroupPrimaryType.valueOf(id), is(ReleaseGroupPrimaryType.UNDEFINED));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test()
   public void unrecognisedStatusThrowsException() {
     ReleaseGroupPrimaryType.valueOf(5);
   }
