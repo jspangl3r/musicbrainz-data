@@ -63,28 +63,11 @@ abstract class AbstractEnumUserType<E extends Enum<E>> implements UserType {
     return x.hashCode();
   }
 
-//  @Override
-//  public Object nullSafeGet(ResultSet resultSet, String[] names, Object owner) throws HibernateException, SQLException {
-//    Integer name = resultSet.getInt(names[0]);
-//    if (resultSet.wasNull()) {
-//      name = null;
-//    }
-//    return getEnumConstant(name);
-//  }
+
 
   protected abstract E getEnumConstant(Integer value);
 
-  @SuppressWarnings("unchecked")
-//  @Override
-//  public void nullSafeSet(PreparedStatement preparedStatement, Object value, int index) throws HibernateException,
-//    SQLException {
-//    if (null == value) {
-//      preparedStatement.setNull(index, Types.INTEGER);
-//    } else {
-//      Integer enumValue = getIntegerValue((E) value);
-//      preparedStatement.setInt(index, enumValue);
-//    }
-//  }
+
 
   protected abstract Integer getIntegerValue(E value);
 

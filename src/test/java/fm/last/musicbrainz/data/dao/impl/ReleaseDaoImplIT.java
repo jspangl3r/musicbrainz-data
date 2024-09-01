@@ -27,9 +27,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.google.common.collect.Sets;
-
-import fm.last.musicbrainz.data.AbstractHibernateModelIT;
+import com.google.common.collect.Sets;import fm.last.musicbrainz.data.AbstractHibernateModelIT;
 import fm.last.musicbrainz.data.dao.ReleaseDao;
 import fm.last.musicbrainz.data.model.Artist;
 import fm.last.musicbrainz.data.model.Release;
