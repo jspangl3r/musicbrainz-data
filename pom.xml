@@ -52,8 +52,8 @@
   </developers>
 
   <properties>
-    <hibernateVersion>3.6.9.Final</hibernateVersion>
-    <springVersion>3.2.2.RELEASE</springVersion>
+    <hibernateVersion>5.3.20.Final</hibernateVersion>
+    <springVersion>5.2.21.RELEASE</springVersion>
     <slf4jVersion>1.7.5</slf4jVersion>
   </properties>
 
